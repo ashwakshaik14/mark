@@ -1,12 +1,142 @@
-# React + Vite
+## 🧾 User Table with Infinite Scroll
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack web application that displays a paginated and searchable user list with infinite scroll and virtualization.
 
-Currently, two official plugins are available:
+Built with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Backend:** Node.js + Express
+- **Frontend:** React + Vite + @tanstack/react-table + @tanstack/react-virtual
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Setup Instructions
+
+### 🔙 Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   cd server
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the backend server:
+   ```bash
+   node server.js
+   ```
+
+   The server runs at:  
+   📍 **http://localhost:5000**
+
+---
+
+### 🔜 Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd client
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the React development server:
+   ```bash
+   npm run dev
+   ```
+
+   The app runs at:  
+   📍 **http://localhost:5173** (or as shown in terminal)
+
+---
+
+## ✨ Features Implemented
+
+- ✅ Paginated API fetching (`/api/user?page=1&limit=50`)
+- ✅ Infinite scroll with **manual scroll event + debounce**
+- ✅ Search users by name or email (debounced)
+- ✅ Sort by Name or Email columns
+- ✅ Virtualized rendering of rows for performance
+- ✅ Combined `Company (City)` field
+- ✅ Phone number formatted as `+1-XXX-XXX-XXXX`
+- ✅ Responsive design with clean CSS
+- ✅ Graceful handling of loading, error, and empty states
+
+---
+
+## 📦 Technologies Used
+
+| Category    | Stack/Libraries                          |
+|-------------|-------------------------------------------|
+| Backend     | Node.js, Express.js, JSON file            |
+| Frontend    | React.js (Vite), CSS                      |
+| Table       | @tanstack/react-table v8                  |
+| Virtualizer | @tanstack/react-virtual                   |
+
+---
+
+## 📁 Folder Structure
+
+```
+markopolo/
+├── backend/
+│   ├── server.js
+│   └── users.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── components/
+│   │   │   └── UserTable.jsx
+│   │   └── hooks/
+│   │       └── usePaginatedUsers.js
+```
+
+---
+
+## 📄 API Example
+
+### ✅ Success
+```
+GET /api/user?page=1&limit=50
+```
+
+```json
+{
+  "data": [...],
+  "total": 5000,
+  "page": 1,
+  "limit": 50
+}
+```
+
+### ❌ Error
+```json
+{
+  "error": "Invalid page or limit"
+}
+```
+
+---
+
+## ✅ Bonus Features Implemented
+
+- Sorting
+- Searching with debounce
+- Manual scroll debounce
+- Virtualized rendering
+- Phone formatting
+- Responsive styling
+- Modular file structure
+
+---
+
+## 📬 Contact
+
+For any queries or issues:
+
+📧 **ashwakshaik15@gmail.com**
