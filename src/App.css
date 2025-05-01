@@ -1,0 +1,143 @@
+.app-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+  }
+  
+  .table-container {
+    height: 500px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  .user-table {
+    width: 100%;
+    min-width: 800px; /* Allows horizontal scroll on smaller screens */
+    table-layout: fixed;
+    border-collapse: collapse;
+    position: relative;
+  }
+
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar {
+    width: 50%;
+    height: 30px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .header-row {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for sticky effect */
+  }
+  
+  .header-cell,
+  .cell {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Fixed column widths */
+  .col-name {
+    width: 200px;
+  }
+  
+  .col-email {
+    width: 250px;
+  }
+  
+  .col-phone {
+    width: 180px;
+  }
+  
+  .col-companyCity {
+    width: 300px;
+  }
+  
+  .row:hover {
+    background-color: #e0e0e0; /* Slightly darker hover color */
+  }
+  
+  /* Scrollbar Styles */
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .user-table {
+      min-width: 600px;
+    }
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    .header-cell,
+    .cell {
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .user-table {
+      min-width: auto;
+    }
+  
+    .header-cell,
+    .cell {
+      padding: 8px;
+      font-size: 0.75rem; /* smaller text size */
+    }
+  
+    .col-name {
+      width: 150px;
+    }
+  
+    .col-email {
+      width: 180px;
+    }
+  
+    .col-phone {
+      width: 120px;
+    }
+  
+    .col-companyCity {
+      width: 200px;
+    }
+  }
